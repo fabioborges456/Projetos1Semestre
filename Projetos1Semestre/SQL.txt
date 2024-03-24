@@ -1,0 +1,149 @@
+criaçao de tabela
+create table cliente(cpfcli integer, nomecli varchar(40), idadecli integer, sexo char(1), primary key(cpfcli));
+
+chave primaria =  primary key
+
+numeros = integer
+
+texto com adaptaçao de caracter = varchar(?)
+
+texto sem com adaptaçao de caracter = char(?)
+
+criar tabela = create table
+
+valores = values
+
+inserir dados = insert into
+
+valor vasio = null
+
+nao aceitar vasio = not null
+
+consulta = select campo from tabela where condicao
+
+quem a ser buscado = where
+
+data e hora = datetime
+
+e ou = or
+
+apagar tabela = drop table
+
+chave estrangeira = foreign key (atributo) references cliente (cpf)
+
+restricao = constrant
+
+apelido = alias
+
+alterar tabela = alter table cliente alter column nome varchar(50)
+
+
+
+
+insert into animal values("Rex", 4, "Poodle", "12547858890
+", 1);
+insert into animal values("Mimo", 2, "Beagle", "21452466830", 2
+
+);
+insert into animal values("Thor", 5, "Husky", "25414536890
+", 3);
+insert into animal values("Branca", 2, "Pug", "12547869801
+", 4);
+insert into animal values("Tobe", 4, "Labrador", "25636547892
+", 5);
+insert into animal values("Mel", 2, "Golden", "21452466830
+", 6);
+insert into animal values("Tino", 3, "Husky", "12425663801
+", 7);
+insert into animal values("Xita", 2, "Pug", "12547869801
+", 8);
+insert into animal values("Luke", 5, "Poodle", "25414536890", 9
+);
+insert into animal values("bobe", 6, "kangal", "25469836802
+", 10);
+insert into animal values("tike", 8, "border collir", "256361247892
+
+", 11);
+insert into animal values("tedi", 9, "dogue alemao", "25636875892
+
+", 12);
+insert into animal values("luka", 5, "Labrador retriever", "25637897892
+
+", 13);
+insert into animal values("pit", 2, "pastor autraliano", "25631457892
+
+", 14);
+insert into animal values("rouse", 1, "pastor branco", "25636963892
+
+", 15);
+insert into animal values("ragel", 8, "box", "25637857892
+
+", 16);
+insert into animal values("ruli", 7, "Lobo", "25784547892
+
+", 17);
+insert into animal values("Tupe", 5, "Bullmastiff", "25147547892
+
+", 18);
+insert into animal values("snop", 3, "Pit bull terrier", "25987547892
+
+", 19);
+insert into animal values("geli", 2, "Rottweiler", "25632547892
+
+", 20);
+
+
+
+create table animal(nome varchar(20), idade integer, raca varchar(20), cpf varchar(11), codigo integer, primary key(codigo),foreign key (cpf) references cliente 
+(cpf));
+
+
+
+insert into cliente values("12547869801", "Mario", "Av Pompeia", "05051200", "Pompeia", 32);
+insert into cliente values("65224758897", "Camila", "Rua Tito, 1240", "02545001", "Lapa", 18);
+insert into cliente values("12547858890", "Felipe", "Av. Paulista, 510", "03420002", "Jardins", 20);
+insert into cliente values("12425663801", "Roberto", "Rua Catao, 72", "05150002", "Lapa", 40);
+insert into cliente values("25469836802", "Luciana", "Rua Frobem, 55", "05302030", "Leopoldina", 25);
+insert into cliente values("25636547892", "Ana Cristina", "Rua Tito, 15" "02545002", "Lapa", 18);
+insert into cliente values("25478412860", "Marcela", "Rua Tito, 171", "02545001", "Lapa", 25
+);
+insert into cliente values("25414536890", "Aline", "Rua Oscar Freire, 25", "01411002", "Jardins", 20);
+insert into cliente values("21452466830", "joao", "Rua John Smidt", "02545002", "Lapa", 18);
+insert into cliente values("21457896830", "patricia", "Rua Dr. Helmuth Weinmann ", "02544002", "caieras", 18);
+insert into cliente values("21457416830", "rogerio", "Rua Ana Maltz Knijnik", "02545472", "aurora", 14);
+insert into cliente values("21451236830", "luiz", "Rua Abrahão Melnick", "02544702", "agua branca", 17);
+insert into cliente values("21455696830", "averaldo", "Rua Curvelo (Petrópolis", "02475002", "sao bento", 11);
+insert into cliente values("21472466830", "antonio", "Av. Senador Tarso Dutra", "02548002", "republica", 14);
+insert into cliente values("21496466830", "samanta", "Av. Diário de Notícias ", "02125002", "franco da rocha", 47);
+insert into cliente values("21412466830", "roger", "Rua Primeiro de Janeiro ", "02589002", "baltazar", 17);
+insert into cliente values("29642466830", "Rua Marquês do Herval", "02544702", "teodoro", 15);
+insert into cliente values("21452497130", "fabio", "Rua Luiz Só (Petrópolis", "02547002", "bras", 17);
+insert into cliente values("21442366830", "ruan", "Rua Regente", "02155002", "francisco morato", 19);
+insert into cliente values("21442366830", "samara", "Rua Cassilda Flora Zaffari ", "02545002", "pirituba", 21);
+
+
+
+create table cliente(cpf varchar(11), nome varchar(40), endereco varchar(40), cep varchar(8), bairro varchar(40), idade integer), primary key(cpf);
+
+
+
+
+select raca from animal where nome="mel"    resp goldem
+select idade from animal where nome="xita"   resp 2
+select nome from animal where raca="labrador"   resp  tobe judy
+select nome from cliente where bairro="lapa"  resp  roberto armando marcela ana camila
+select cep from cliente where nome="Ana Cristina"
+select idade from cliente where nome="felipe"
+select nome from cliente where idade=18  resp armando ana camila
+
+
+
+
+select cliente.nome, animal.nome, animal.idade from cliente inner join animal on animal.cpf = cliente.cpf
+select cliente.nome, animal.raca  from animal inner join cliente on cliente.cpf = animal.cpf where animal.raca="Labrador"
+select c.nome, a.raca  from animal as a inner join cliente as c on c.cpf = a.cpf where a.raca="Labrador"
+
+select cliente.nome, cliente.bairro from cliente inner join animal on cliente.cpf = animal.cpf where animal.raca="Labrador" and cliente.bairro="lapa"
+
+select cliente.nome, animal.raca, animal.idade from cliente inner join animal on cliente.cpf = animal.cpf where animal.idade>2
+select nome, endereco from cliente where bairro="Leopoldina"
